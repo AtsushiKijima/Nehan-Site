@@ -1,0 +1,19 @@
+# --- secrets / config (念のため。存在しないが防御的に) ---
+wp-config.php
+.env
+.env.*
+*.pem
+*credential*
+*secret*
+
+# --- dependencies / build ---
+node_modules/
+vendor/
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# 注: zip・_originals_backup 等は「丸ごとバックアップ」方針のため意図的に含める

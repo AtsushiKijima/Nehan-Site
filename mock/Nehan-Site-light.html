@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nehan株式会社 — 新しい公共を、共に創ろう</title>
+<meta name="description" content="Nehan株式会社は「新しい公共を共に創ろう」をビジョンに掲げ、入札情報サービスLabidを開発・提供しています。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+:root {
+  /* Labid brand (orange / cream) — Labid文脈で使用 */
+  --orange: #E95F33;
+  --orange-dark: #C94820;
+  --orange-soft: #F2876C;
+  --cream: #F5B76F;
+  --cream-dark: #E09D5A;
+  /* Nehan brand (blue / pink) — Nehan文脈で使用 */
+  --primary: #2581E9;
+  --primary-dark: #1A6BC9;
+  --primary-soft: #5DA3F2;
+  --pink: #F97CA5;
+  --pink-soft: #FBA8C0;
+
+  /* Light theme — neutrals (matching recruit site) */
+  --ink: #1A1A1F;
+  --ink-2: #3D3D44;
+  --ink-3: #6B6B74;
+  --ink-4: #A4A4AE;
+  --line: #E5EBF2;
+  --line-2: #F0F4F9;
+  --bg: #FFFFFF;
+  --bg-alt: #F8FBFE;
+  --bg-card: #FFFFFF;
+  --sky: #6FB1E0;
+  --sky-soft: rgba(111, 177, 224, 0.5);
+
+  --f-jp: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic Medium", sans-serif;
+  --f-en: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--f-jp);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "palt" 1;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ---------- Layout ---------- */
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+@media (max-width: 768px) {
+  .container { padding: 0 24px; }
+}
+
+/* ---------- Navigation (floating pill) ---------- */
+.nav {
+  position: sticky;
+  top: 20px;
+  z-index: 100;
+  padding: 0 20px;
+  margin-top: 20px;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 28px 0 32px;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  border: 1px solid rgba(20, 20, 22, 0.06);
+  border-radius: 999px;
+  box-shadow: 0 12px 32px -8px rgba(20, 20, 22, 0.10);
+}
+.nav-logo {
+  font-family: var(--f-en);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.nav-logo .dot { color: var(--primary); }
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  font-family: var(--f-en);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+.nav-menu a { transition: color .15s; letter-spacing: 0.04em; }
+.nav-menu a:hover { color: var(--primary); }
+.nav-actions { display: flex; align-items: center; gap: 10px; }
+@media (max-width: 900px) {
+  .nav-menu { display: none; }
+}
+
+/* ---------- Navigation (floating pill) ---------- */
+.nav {
+  position: sticky;
+  top: 20px;
+  z-index: 100;
+  padding: 0 20px;
+  margin-top: 20px;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px 0 28px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(150%) blur(18px);
+  -webkit-backdrop-filter: saturate(150%) blur(18px);
+  border: 1px solid rgba(20, 20, 22, 0.06);
+  border-radius: 999px;
+  box-shadow: 0 14px 40px -10px rgba(20, 20, 22, 0.12);
+}
+.nav-logo {
+  display: inline-flex;
+  align-items: center;
+}
+.nav-logo img { height: 28px; width: auto; display: block; }
+.nav-logo .dot { color: var(--sky); margin-left: 1px; }
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-family: var(--f-en);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-2);
+}
+.nav-menu a {
+  letter-spacing: 0.06em;
+  transition: color .15s;
+  position: relative;
+  padding: 4px 0;
+}
+.nav-menu a:hover { color: var(--sky); }
+.nav-actions { display: flex; align-items: center; gap: 10px; }
+@media (max-width: 980px) {
+  .nav-menu { display: none; }
+}
+@media (max-width: 768px) {
+  .nav { top: 12px; margin-top: 12px; padding: 0 12px; }
+  .nav-inner { height: 54px; padding: 0 14px 0 18px; }
+  .nav-logo { font-size: 19px; }
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--f-jp);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 11px 22px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all .2s ease;
+  white-space: nowrap;
+}
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: rgba(20, 20, 22, 0.10); }
+.btn-ghost:hover { border-color: var(--ink); background: rgba(20, 20, 22, 0.04); }
+.btn-lg { font-size: 15px; padding: 16px 30px; }
+.btn .arrow { font-family: var(--f-en); transition: transform .2s; }
+.btn:hover .arrow { transform: translateX(3px); }
+
+/* ---------- Hero (Nehan — painterly brushstroke) ---------- */
+.hero {
+  padding: 0 24px;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(ellipse 80% 60% at 90% 50%, rgba(255, 230, 228, 0.25) 0%, rgba(255,255,255,0) 60%),
+    radial-gradient(ellipse 50% 50% at 10% 80%, rgba(240, 232, 244, 0.18) 0%, rgba(255,255,255,0) 65%),
+    linear-gradient(135deg, #FDFAFA 0%, #FAF6F8 50%, #FDFAF6 100%);
+}
+.hero-arcs {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.hero-arcs svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ブラシストロークのゆったりした動き */
+.hero-arcs .brush-1 { animation: brushDrift1 24s ease-in-out infinite; transform-origin: center; transform-box: view-box; }
+.hero-arcs .brush-2 { animation: brushDrift2 28s ease-in-out infinite; transform-origin: center; transform-box: view-box; }
+.hero-arcs .brush-3 { animation: brushDrift3 22s ease-in-out infinite; transform-origin: center; transform-box: view-box; }
+
+@keyframes brushDrift1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  50%      { transform: translate(-12px, 8px) rotate(-1.5deg) scale(1.02); }
+}
+@keyframes brushDrift2 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  50%      { transform: translate(15px, -10px) rotate(2deg) scale(1.03); }
+}
+@keyframes brushDrift3 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  50%      { transform: translate(-8px, -12px) rotate(-1deg) scale(1.04); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-arcs .brush-1,
+  .hero-arcs .brush-2,
+  .hero-arcs .brush-3 { animation: none; }
+}
+.hero-noise {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background-image:
+    radial-gradient(rgba(20, 20, 22, 0.04) 1px, transparent 1px);
+  background-size: 3px 3px;
+  -webkit-mask-image: radial-gradient(ellipse at 30% 50%, #000 30%, transparent 80%);
+          mask-image: radial-gradient(ellipse at 30% 50%, #000 30%, transparent 80%);
+}
+.hero-grid {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 120px 16px 100px;
+}
+.hero-eyebrow {
+  font-family: var(--f-en);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  color: var(--sky);
+  text-transform: uppercase;
+  margin-bottom: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.hero-eyebrow::before {
+  content: "";
+  width: 36px;
+  height: 1px;
+  background: var(--sky);
+}
+.hero-headline {
+  font-family: var(--f-jp);
+  font-weight: 900;
+  font-size: clamp(48px, 9vw, 132px);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  margin-bottom: 40px;
+  max-width: 1040px;
+}
+.hero-headline .accent {
+  background: linear-gradient(135deg, var(--sky) 0%, var(--pink) 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-sub {
+  font-family: var(--f-jp);
+  font-size: clamp(16px, 1.3vw, 19px);
+  line-height: 2.0;
+  color: var(--ink-2);
+  max-width: 640px;
+  margin: 0 0 56px;
+  font-weight: 500;
+}
+.hero-cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Hero entrance — staggered fade-up */
+.hero-eyebrow,
+.hero-headline,
+.hero-sub,
+.hero-cta {
+  opacity: 0;
+  animation: heroFadeUp 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+.hero-eyebrow  { animation-delay: 0.10s; }
+.hero-headline { animation-delay: 0.28s; }
+.hero-sub      { animation-delay: 0.55s; }
+.hero-cta      { animation-delay: 0.78s; }
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Section base ---------- */
+.section {
+  padding: 140px 0;
+  position: relative;
+}
+.section-alt {
+  background: var(--bg-alt);
+}
+.section-header {
+  margin-bottom: 64px;
+}
+.section-num {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--f-en);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--ink-3);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.section-num::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--primary);
+}
+.section-title {
+  font-family: var(--f-en);
+  font-size: clamp(48px, 6vw, 88px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+.section-title-jp {
+  font-family: var(--f-jp);
+  font-size: clamp(28px, 3.4vw, 46px);
+  font-weight: 900;
+  line-height: 1.34;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.section-title-jp .accent { color: var(--primary); }
+.section-sub {
+  font-size: 16px;
+  line-height: 1.95;
+  color: var(--ink-2);
+  max-width: 760px;
+  font-weight: 500;
+}
+
+/* ---------- Mission section ---------- */
+.mission {
+  position: relative;
+  overflow: hidden;
+}
+.mission-text {
+  font-family: var(--f-jp);
+  font-size: clamp(17px, 1.5vw, 22px);
+  line-height: 2.2;
+  color: var(--ink-2);
+  font-weight: 500;
+  max-width: 1080px;
+  margin: 0 auto;
+  text-align: center;
+}
+.mission-text p + p { margin-top: 1.4em; }
+.mission-text .emph { color: var(--ink); font-weight: 700; }
+.mission-text .accent { color: var(--primary); font-weight: 700; }
+
+/* ---------- Service card ---------- */
+.service-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .service-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+.service-visual {
+  position: relative;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(249,124,165,0.18) 0%, rgba(255,255,255,0) 60%), var(--bg-card);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  padding: 24px;
+  box-shadow: 0 24px 50px -20px rgba(37, 129, 233, 0.18);
+}
+.service-visual-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 16px 32px -16px rgba(20, 20, 22, 0.18);
+}
+.service-visual-mock {
+  position: relative;
+  z-index: 2;
+  width: 78%;
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 30px 60px -20px rgba(20, 20, 22, 0.14);
+  overflow: hidden;
+}
+.service-visual-mock-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #F4F4F6;
+  border-bottom: 1px solid #EAEAEE;
+}
+.service-visual-mock-head span {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #DDD;
+}
+.service-visual-mock-body {
+  padding: 16px;
+  display: grid;
+  gap: 8px;
+}
+.service-visual-mock-body .row {
+  height: 32px;
+  background: linear-gradient(90deg, #EAF3FE 0%, #FFFFFF 60%);
+  border-left: 3px solid var(--orange);
+  border-radius: 4px;
+}
+.service-visual-mock-body .row.short { width: 70%; }
+.service-eyebrow {
+  font-family: var(--f-en);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.service-title {
+  font-family: var(--f-jp);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 900;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.service-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.service-brand-name {
+  font-family: var(--f-en);
+  font-size: clamp(48px, 5vw, 72px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--orange);
+}
+.service-brand-yomi {
+  font-family: var(--f-jp);
+  font-size: 14px;
+  color: var(--ink-3);
+  letter-spacing: 0.08em;
+}
+.service-desc {
+  font-size: 16px;
+  line-height: 1.95;
+  color: var(--ink-2);
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+/* ---------- News list ---------- */
+.news-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+.news-item {
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  gap: 32px;
+  align-items: center;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+  transition: padding-left .2s ease, color .2s ease;
+}
+.news-item:hover { padding-left: 12px; color: var(--primary); }
+@media (max-width: 720px) {
+  .news-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 24px 0;
+  }
+}
+.news-date {
+  font-family: var(--f-en);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+}
+.news-title {
+  font-family: var(--f-jp);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.6;
+}
+.news-arrow {
+  font-family: var(--f-en);
+  font-size: 18px;
+  color: var(--ink-4);
+  transition: color .2s, transform .2s;
+}
+.news-item:hover .news-arrow { color: var(--primary); transform: translateX(4px); }
+
+/* ---------- Executives ---------- */
+.execs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.exec-row {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: stretch;
+}
+@media (max-width: 900px) {
+  .execs { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+}
+@media (max-width: 600px) {
+  .execs { grid-template-columns: 1fr; gap: 32px; }
+}
+.exec-portrait {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.exec-portrait img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+}
+.exec-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  font-family: var(--f-en);
+  font-size: 88px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: rgba(111, 177, 224, 0.35);
+}
+.exec-info {
+  padding-top: 4px;
+}
+.exec-role {
+  font-family: var(--f-jp);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+.exec-name {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.exec-name-jp {
+  font-family: var(--f-jp);
+  font-size: clamp(20px, 1.8vw, 24px);
+  font-weight: 900;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.exec-name-en {
+  font-family: var(--f-en);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--sky);
+  letter-spacing: 0.05em;
+}
+.exec-bio {
+  font-family: var(--f-jp);
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: var(--ink-2);
+  font-weight: 500;
+}
+
+/* ---------- Recruit CTA band ---------- */
+.recruit {
+  position: relative;
+  padding: 180px 0;
+  min-height: clamp(560px, 50vw, 760px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  background-image:
+    linear-gradient(180deg, rgba(20, 23, 32, 0.45) 0%, rgba(20, 23, 32, 0.78) 100%),
+    url('./recruit/recruite-hero.webp');
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+}
+@media (max-width: 768px) {
+  .recruit { padding: 120px 0; min-height: 480px; }
+}
+.recruit-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.recruit-eyebrow {
+  font-family: var(--f-en);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: var(--pink-soft);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.recruit-headline {
+  font-family: var(--f-jp);
+  font-size: clamp(28px, 3.4vw, 48px);
+  font-weight: 900;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 36px;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.35);
+}
+
+/* ---------- Company info ---------- */
+.company-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px 64px;
+}
+@media (max-width: 720px) {
+  .company-grid { grid-template-columns: 1fr; gap: 8px 0; }
+}
+.company-row {
+  display: contents;
+}
+.company-label {
+  font-family: var(--f-en);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--ink-3);
+  text-transform: uppercase;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+.company-value {
+  font-family: var(--f-jp);
+  font-size: 16px;
+  color: var(--ink);
+  font-weight: 500;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+  line-height: 1.8;
+}
+@media (max-width: 720px) {
+  .company-label { padding: 20px 0 4px; border: none; }
+  .company-value { padding: 0 0 20px; }
+}
+
+/* ---------- Footer (Labid LP 完全準拠) ---------- */
+.footer {
+  padding: 80px 0 40px;
+  background: #08172E;
+  border-top: 1px solid rgba(20, 20, 22, 0.05);
+  color: rgba(255, 255, 255, 0.72);
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 64px;
+  align-items: start;
+}
+.footer-brand {
+  max-width: 280px;
+}
+.footer-logo {
+  height: 26px;
+  width: auto;
+  filter: brightness(1.1);
+  margin-bottom: 20px;
+}
+.footer-tagline {
+  font-family: var(--f-jp);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+}
+.footer-company {
+  font-family: var(--f-jp);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.8;
+}
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+.footer-col-title {
+  font-family: var(--f-en);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-col a {
+  font-family: var(--f-jp);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  transition: color .2s;
+}
+.footer-col a:hover { color: #fff; }
+.footer-bottom {
+  grid-column: 1 / -1;
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(20, 20, 22, 0.06);
+}
+.footer-copy {
+  font-family: var(--f-en);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.04em;
+}
+@media (max-width: 900px) {
+  .footer-inner { grid-template-columns: 1fr; gap: 40px; }
+  .footer-links { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+}
+
+/* ---------- Mobile tweaks ---------- */
+@media (max-width: 768px) {
+  .section { padding: 96px 0; }
+  .recruit { padding: 96px 0; }
+  .hero { padding: 100px 24px 80px; min-height: auto; }
+  .nav { top: 12px; margin-top: 12px; padding: 0 12px; }
+  .nav-inner { padding: 0 16px 0 20px; height: 56px; }
+  .nav-actions .btn-ghost { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-arcs svg,
+  .hero-arcs .ring-arc,
+  .hero-arcs .ring-pulse,
+  .hero-eyebrow,
+  .hero-headline,
+  .hero-sub,
+  .hero-cta {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .hero-arcs svg { transform: translateY(-50%) !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== Navigation ========== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#" aria-label="Nehan">
+      <img src="./recruit/logo.png" alt="Nehan" />
+    </a>
+    <nav class="nav-menu">
+      <a href="#mission">Mission</a>
+      <a href="#service">Service</a>
+      <a href="#news">News</a>
+      <a href="#executives">Members</a>
+      <a href="#company">Company</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="./recruit/index.html" class="btn btn-primary">採用情報</a>
+    </div>
+  </div>
+</header>
+
+<!-- ========== Hero (Nehan corporate) ========== -->
+<section class="hero">
+  <div class="hero-arcs" aria-hidden="true">
+    <svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <!-- ブラシストローク用の歪みフィルタ(painterly distortion) -->
+        <filter id="brushFilter" x="-15%" y="-15%" width="130%" height="130%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012 0.022" numOctaves="3" seed="4" />
+          <feDisplacementMap in="SourceGraphic" scale="120" />
+        </filter>
+        <filter id="brushFilter2" x="-15%" y="-15%" width="130%" height="130%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.018 0.014" numOctaves="2" seed="11" />
+          <feDisplacementMap in="SourceGraphic" scale="100" />
+        </filter>
+        <filter id="brushFilter3" x="-15%" y="-15%" width="130%" height="130%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.020 0.030" numOctaves="3" seed="17" />
+          <feDisplacementMap in="SourceGraphic" scale="80" />
+        </filter>
+        <!-- グレイン質感(brush の繊維感) -->
+        <filter id="grainFilter">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" />
+          <feColorMatrix values="0 0 0 0 0
+                                 0 0 0 0 0
+                                 0 0 0 0 0
+                                 0 0 0 0.45 0" />
+          <feComposite in2="SourceGraphic" operator="in" />
+          <feBlend in="SourceGraphic" mode="multiply" />
+        </filter>
+
+        <!-- メインブラシ:ラベンダー→ピンク(強め)→コーラル→クリーム -->
+        <linearGradient id="brushMain" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%"  stop-color="#C9B8E6" stop-opacity="0.55" />
+          <stop offset="22%" stop-color="#F5A2BE" stop-opacity="0.7" />
+          <stop offset="48%" stop-color="#FA8AB1" stop-opacity="0.72" />
+          <stop offset="70%" stop-color="#FFB5A7" stop-opacity="0.6" />
+          <stop offset="88%" stop-color="#FFDFBE" stop-opacity="0.42" />
+          <stop offset="100%" stop-color="#FFE7CB" stop-opacity="0.35" />
+        </linearGradient>
+
+        <!-- セカンダリブラシ:ソフトスカイ→ピンク -->
+        <linearGradient id="brushSoft" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%"  stop-color="#5DA3F2" stop-opacity="0.6" />
+          <stop offset="50%" stop-color="#FBA8C0" stop-opacity="0.65" />
+          <stop offset="100%" stop-color="#FFD3DE" stop-opacity="0.4" />
+        </linearGradient>
+
+        <!-- ハイライト:暖かいクリーム -->
+        <linearGradient id="brushHighlight" x1="0" y1="0" x2="0.5" y2="1">
+          <stop offset="0%"  stop-color="#FFE3C0" stop-opacity="0.85" />
+          <stop offset="100%" stop-color="#FFE3C0" stop-opacity="0" />
+        </linearGradient>
+      </defs>
+
+      <!-- メインの大きなブラシストローク(右側に流れる) -->
+      <g class="brush-1">
+        <ellipse cx="1280" cy="500" rx="520" ry="350"
+                 fill="url(#brushMain)"
+                 filter="url(#brushFilter)"
+                 transform="rotate(-22 1280 500)"
+                 opacity="0.92" />
+      </g>
+
+      <!-- 上部に重ねる細いストローク(さらに動き) -->
+      <g class="brush-2">
+        <ellipse cx="1380" cy="350" rx="360" ry="120"
+                 fill="url(#brushMain)"
+                 filter="url(#brushFilter2)"
+                 transform="rotate(-18 1380 350)"
+                 opacity="0.75" />
+      </g>
+
+      <!-- 下部の暖色補助ストローク -->
+      <g class="brush-3">
+        <ellipse cx="1180" cy="700" rx="380" ry="160"
+                 fill="url(#brushMain)"
+                 filter="url(#brushFilter3)"
+                 transform="rotate(-28 1180 700)"
+                 opacity="0.7" />
+      </g>
+
+      <!-- 薄いラベンダー雲(背景の柔らかさ) -->
+      <ellipse cx="900" cy="280" rx="500" ry="180"
+               fill="url(#brushSoft)"
+               filter="url(#brushFilter2)"
+               transform="rotate(-12 900 280)"
+               opacity="0.55" />
+
+      <!-- ハイライトのきらめき(明るいクリーム) -->
+      <ellipse cx="1100" cy="450" rx="180" ry="80"
+               fill="url(#brushHighlight)"
+               filter="url(#brushFilter3)"
+               transform="rotate(-30 1100 450)"
+               opacity="0.7" />
+    </svg>
+  </div>
+  <div class="hero-noise" aria-hidden="true"></div>
+
+  <div class="hero-grid">
+    <h1 class="hero-headline">
+      新しい公共を<br />
+      <span class="accent">共に創ろう。</span>
+    </h1>
+    <div class="hero-cta">
+      <a href="#service" class="btn btn-primary btn-lg">サービスサイト <span class="arrow">→</span></a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== Mission ========== -->
+<section class="section mission" id="mission">
+  <div class="container">
+    <div class="section-header" style="text-align:center;">
+      <div class="section-num" style="margin-left:auto; margin-right:auto;">01 ── ミッション</div>
+      <h2 class="section-title">Mission</h2>
+    </div>
+    <div class="mission-text">
+      <p>
+        人口減少や技術革新により、行政機関だけでの公共サービス提供が難しくなる中、市民・NPO・企業など多様な主体による<span class="emph">「新しい公共」</span>の実現が求められています。
+      </p>
+      <p>
+        しかし現状では、特定事業者への依存や行政の知見不足により、効果的な課題解決が進んでいません。
+      </p>
+      <p>
+        私たちは、より多くの民間団体が公共課題の解決にチャレンジし、そのプロセスを通じて行政とのノウハウ共有を進めることで、<span class="accent">すべての人が当事者として参画する、新しい公共の実現</span>を目指します。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Service ========== -->
+<section class="section section-alt" id="service">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">02 ── 事業</div>
+      <h2 class="section-title">Service</h2>
+      <p class="section-sub">
+        Nehanは、公共営業の現場が抱える非効率を、AIとデータで解きほぐします。<br />
+        私たちが提供するのは、行政情報を「攻めの営業データ」へと変えるプラットフォームです。
+      </p>
+    </div>
+
+    <div class="service-grid">
+      <div class="service-visual" aria-hidden="true">
+        <img src="./recruit/labid-ai-recommend.png" alt="Labid AI レコメンド" class="service-visual-img" />
+      </div>
+      <div class="service-content">
+        <div class="service-eyebrow">AI Revenue OS for BtoG Sales</div>
+        <h3 class="service-title">BtoG Salesのための<br />AI Revenueプラットフォーム</h3>
+        <div class="service-brand">
+          <span class="service-brand-name">Labid</span>
+          <span class="service-brand-yomi">ラビッド</span>
+        </div>
+        <p class="service-desc">
+          入札・落札・議会録・予算書・総合計画——日本中の行政情報を統合し、自社実績とAIが掛け合わせる。「待って動く」公共営業を、「狙って動かす」公共営業へ。
+        </p>
+        <a href="https://labid.jp" class="btn btn-primary btn-lg">詳しく見る <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== News ========== -->
+<section class="section" id="news">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">03 ── お知らせ</div>
+      <h2 class="section-title">News</h2>
+    </div>
+
+    <div class="news-list">
+      <a href="#" class="news-item">
+        <span class="news-date">2025 / 12 / 04</span>
+        <span class="news-title">Nehan株式会社、シードラウンドで総額約1.6億円の資金調達を実施</span>
+        <span class="news-arrow">→</span>
+      </a>
+      <a href="#" class="news-item">
+        <span class="news-date">2025 / 09 / 19</span>
+        <span class="news-title">Nehan株式会社、公共営業の支援領域拡大を目的に自治体営業支援に強い株式会社リクロスと業務提携</span>
+        <span class="news-arrow">→</span>
+      </a>
+      <a href="#" class="news-item">
+        <span class="news-date">2025 / 08 / 28</span>
+        <span class="news-title">【2025/9/17(水) 11:00】一般社団法人自治体DX推進協議会と共催で「自治体案件を獲得するための実践型営業セミナー 〜基礎知識×入札で成果を出す方法〜」を開催します！</span>
+        <span class="news-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Executives ========== -->
+<section class="section section-alt" id="executives">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">04 ── 経営メンバー</div>
+      <h2 class="section-title">TEAM</h2>
+    </div>
+
+    <div class="execs">
+      <article class="exec-row">
+        <div class="exec-portrait">
+          <span class="exec-fallback" aria-hidden="true">MT</span>
+          <img src="./executives/tsurumaki.jpg" alt="鶴巻 百門" onerror="this.remove();" />
+        </div>
+        <div class="exec-info">
+          <div class="exec-role">代表取締役 CEO</div>
+          <div class="exec-name">
+            <span class="exec-name-jp">鶴巻 百門</span>
+            <span class="exec-name-en">Momoto Tsurumaki</span>
+          </div>
+          <p class="exec-bio">
+            2017年に株式会社サーキュレーション入社。新卒初の支社立ち上げメンバーとして東海支社立ち上げに従事。その後、マツリカにジョインしカスタマーサクセスを担当。カスタマーサクセスSMBチームのリーダーを経験。
+          </p>
+        </div>
+      </article>
+
+      <article class="exec-row">
+        <div class="exec-portrait">
+          <span class="exec-fallback" aria-hidden="true">AK</span>
+          <img src="./executives/kijima.jpg" alt="木嶋 諄" onerror="this.remove();" />
+        </div>
+        <div class="exec-info">
+          <div class="exec-role">代表取締役 COO</div>
+          <div class="exec-name">
+            <span class="exec-name-jp">木嶋 諄</span>
+            <span class="exec-name-en">Atsushi Kijima</span>
+          </div>
+          <p class="exec-bio">
+            2017年にアライドアーキテクツ株式会社へ入社。SNSプロモーション・広告運用、カスタマーサクセスに従事。その後、SaaSプロダクト「echoes」を契約する約50のエンタープライズ顧客の営業マネージャーを担当。SNSアカウント運用やSNSデータを活用した公共入札を複数経験。
+          </p>
+        </div>
+      </article>
+
+      <article class="exec-row">
+        <div class="exec-portrait">
+          <span class="exec-fallback" aria-hidden="true">DI</span>
+          <img src="./executives/ikemizu.jpg" alt="池水 大揮" onerror="this.remove();" />
+        </div>
+        <div class="exec-info">
+          <div class="exec-role">取締役 / CTO</div>
+          <div class="exec-name">
+            <span class="exec-name-jp">池水 大揮</span>
+            <span class="exec-name-en">Daiki Ikemizu</span>
+          </div>
+          <p class="exec-bio">
+            2018年にシンプレクス株式会社へ入社。暗号資産/FXの取引システム開発に従事。その後、ニューラルグループ株式会社にて新規開発をメインとしたAIを用いたアプリケーション開発を複数経験。
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Company info ========== -->
+<section class="section" id="company">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">05 ── 会社情報</div>
+      <h2 class="section-title">Company</h2>
+    </div>
+
+    <div class="company-grid">
+      <div class="company-label">Company Name</div>
+      <div class="company-value">Nehan株式会社</div>
+
+      <div class="company-label">Address</div>
+      <div class="company-value">
+        〒108-6022<br />
+        東京都港区港南二丁目15番1号<br />
+        品川インターシティA棟 22階
+      </div>
+
+      <div class="company-label">Business</div>
+      <div class="company-value">BtoG SalesのためのAI Revenueプラットフォーム「Labid」の開発・運営</div>
+
+      <div class="company-label">Vision</div>
+      <div class="company-value">新しい公共を共に創ろう</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Recruit CTA ========== -->
+<section class="recruit" id="recruit">
+  <div class="container">
+    <div class="recruit-inner">
+      <div class="recruit-eyebrow">Join Us · Recruit</div>
+      <h2 class="recruit-headline">
+        Nehanは、一緒に挑戦する仲間を募集しています。
+      </h2>
+      <a href="./recruit/index.html" class="btn btn-primary btn-lg">採用情報を見る <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Footer (Labid LP 準拠) ========== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjE0IiBoZWlnaHQ9IjQ4IiB2aWV3Qm94PSIwIDAgMjE0IDQ4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTkuMTk5MiA0Ny44NDI0TDM3LjQ1NSAxNi41MjQ0TDQ1Ljc5NTkgMzEuMDAzMUg0MC40NDUxTDMwLjg0NTEgNDcuODQyNEgxOS4xOTkyWiIgZmlsbD0iI0U5NUYzMyIvPgo8cGF0aCBkPSJNMCA0OEwyNy44NTUzIDBMMzYuMTk2MyAxNC40Nzg3SDMyLjMwMjJMMTIuNiA0OEgwWiIgZmlsbD0iI0U5NUYzMyIvPgo8cGF0aCBkPSJNMjA2LjY5NCAzNy43NkMyMDYuNjk0IDM4LjggMjA3LjIxNCAzOS4zMiAyMDguMjU0IDM5LjMyQzIwOS4zMzQgMzkuMzIgMjEwLjIzNCAzOS4xMiAyMTAuOTU0IDM4LjcyTDIxMC42NTQgNDUuNUMyMDguNzM0IDQ3LjA2IDIwNi41NzQgNDcuODQgMjA0LjE3NCA0Ny44NEMxOTkuNzc0IDQ3Ljg0IDE5Ny4zMzQgNDYuMjQgMTk2Ljg1NCA0My4wNEMxOTQuODU0IDQ2LjI0IDE5MS45MTQgNDcuODQgMTg4LjAzNCA0Ny44NEMxODEuNDc0IDQ3Ljg0IDE3OC4xOTQgNDUuMDIgMTc4LjE5NCAzOS4zOEMxNzguMTk0IDM4LjQyIDE3OC4yOTQgMzcuMzYgMTc4LjQ5NCAzNi4yTDE3OS43NTQgMjkuMThDMTgwLjM5NCAyNS41OCAxODEuODU0IDIyLjcyIDE4NC4xMzQgMjAuNkMxODYuNDU0IDE4LjQ0IDE4OS42NTQgMTcuMzYgMTkzLjczNCAxNy4zNkMxOTYuMjU0IDE3LjM2IDE5OC4yNTQgMTcuOSAxOTkuNzM0IDE4Ljk4TDIwMi43OTQgMS40NTk5NkgyMTMuMDU0TDIwNi43NTQgMzcuMDRDMjA2LjcxNCAzNy4yOCAyMDYuNjk0IDM3LjUyIDIwNi42OTQgMzcuNzZaTTE4OC45MzQgMzQuODhDMTg4Ljg1NCAzNS4yNCAxODguODE0IDM1Ljc0IDE4OC44MTQgMzYuMzhDMTg4LjgxNCAzNy4wMiAxODkuMTE0IDM3LjY2IDE4OS43MTQgMzguM0MxOTAuMzE0IDM4LjkgMTkxLjMxNCAzOS4yIDE5Mi43MTQgMzkuMkMxOTQuMTU0IDM5LjIgMTk1LjM5NCAzOC42NCAxOTYuNDM0IDM3LjUyTDE5OC4yMzQgMjcuNDRDMTk3Ljc5NCAyNi40NCAxOTYuNzU0IDI1Ljk0IDE5NS4xMTQgMjUuOTRDMTkyLjAzNCAyNS45NCAxOTAuMjM0IDI3LjQyIDE4OS43MTQgMzAuMzhMMTg4LjkzNCAzNC44OFoiIGZpbGw9IiNFOTVGMzMiLz4KPHBhdGggZD0iTTE3Mi40MDYgMzkuMzJDMTczLjMyNiAzOS4zMiAxNzQuMTQ2IDM5LjEyIDE3NC44NjYgMzguNzJMMTc0LjU2NiA0NS41QzE3Mi42ODYgNDcuMDYgMTcwLjU0NiA0Ny44NCAxNjguMTQ2IDQ3Ljg0QzE2NC41MDYgNDcuODQgMTYyLjE0NiA0NyAxNjEuMDY2IDQ1LjMyQzE2MC4zNDYgNDQuMiAxNTkuOTg2IDQzLjAyIDE1OS45ODYgNDEuNzhDMTU5Ljk4NiA0MC41IDE2MC4wNjYgMzkuMzggMTYwLjIyNiAzOC40MkwxNjMuODI2IDE4LjE0SDE3NC4wMjZMMTcwLjY2NiAzNy4wNEMxNzAuNjI2IDM3LjI4IDE3MC42MDYgMzcuNSAxNzAuNjA2IDM3LjdDMTcwLjYwNiAzOC43OCAxNzEuMjA2IDM5LjMyIDE3Mi40MDYgMzkuMzJaTTE2NS4wMjYgOC4zNTk5OEMxNjUuMDI2IDUuNzk5OTggMTY1LjU4NiAzLjkzOTk4IDE2Ni43MDYgMi43Nzk5OEMxNjcuODY2IDEuNTc5OTggMTY5LjY0NiAwLjk3OTk4IDE3Mi4wNDYgMC45Nzk5OEMxNzUuNDA2IDAuOTc5OTggMTc3LjA4NiAyLjQ1OTk4IDE3Ny4wODYgNS40MTk5OEMxNzcuMDg2IDcuOTM5OTggMTc2LjUwNiA5Ljc3OTk4IDE3NS4zNDYgMTAuOTRDMTc0LjIyNiAxMi4xIDE3Mi40NDYgMTIuNjggMTcwLjAwNiAxMi42OEMxNjYuNjg2IDEyLjY4IDE2NS4wMjYgMTEuMjQgMTY1LjAyNiA4LjM1OTk4WiIgZmlsbD0iI0U5NUYzMyIvPgo8cGF0aCBkPSJNMTQ2LjEwNyAxNy4zQzE1MC4wNjcgMTcuMyAxNTIuODQ3IDE4LjQgMTU0LjQ0NyAyMC42QzE1NS42NDcgMjIuMTYgMTU2LjI0NyAyNC4wNiAxNTYuMjQ3IDI2LjNDMTU2LjI0NyAyNy4yMiAxNTYuMTQ3IDI4LjE4IDE1NS45NDcgMjkuMThMMTU0Ljc0NyAzNS45QzE1NC4wNjcgMzkuNzQgMTUyLjI4NyA0Mi43IDE0OS40MDcgNDQuNzhDMTQ2LjU2NyA0Ni44MiAxNDIuOTY3IDQ3Ljg0IDEzOC42MDcgNDcuODRDMTM0LjI4NyA0Ny44NCAxMzAuOTY3IDQ2Ljk4IDEyOC42NDcgNDUuMjZDMTI2LjgwNyA0My45IDEyNS44ODcgNDIgMTI1Ljg4NyAzOS41NkMxMjUuODg3IDM4LjkyIDEyNS45NDcgMzguMjYgMTI2LjA2NyAzNy41OEwxMzIuNDI3IDEuNDU5OTZIMTQyLjYyN0wxMzkuNTY3IDE4LjkyQzE0MS4yNDcgMTcuODQgMTQzLjQyNyAxNy4zIDE0Ni4xMDcgMTcuM1pNMTQ1LjU2NyAzMC4wOEMxNDUuNjA3IDI5Ljc2IDE0NS42MjcgMjkuMzIgMTQ1LjYyNyAyOC43NkMxNDUuNjI3IDI4LjE2IDE0NS4zNjcgMjcuNTQgMTQ0Ljg0NyAyNi45QzE0NC4zNjcgMjYuMjIgMTQzLjI4NyAyNS44OCAxNDEuNjA3IDI1Ljg4QzEzOS45NjcgMjUuODggMTM4Ljc4NyAyNi4zOCAxMzguMDY3IDI3LjM4TDEzNi4zMjcgMzcuNEMxMzYuODA3IDM4LjYgMTM3LjgwNyAzOS4yIDEzOS4zMjcgMzkuMkMxNDIuNDA3IDM5LjIgMTQ0LjIyNyAzNy42NiAxNDQuNzg3IDM0LjU4TDE0NS41NjcgMzAuMDhaIiBmaWxsPSIjRTk1RjMzIi8+CjxwYXRoIGQ9Ik0xMTcuNTczIDM3Ljc2QzExNy41NzMgMzguOCAxMTguMDkzIDM5LjMyIDExOS4xMzMgMzkuMzJDMTIwLjIxMyAzOS4zMiAxMjEuMTEzIDM5LjEyIDEyMS44MzMgMzguNzJMMTIxLjUzMyA0NS41QzExOS42MTMgNDcuMDYgMTE3LjQ1MyA0Ny44NCAxMTUuMDUzIDQ3Ljg0QzExMC42NTMgNDcuODQgMTA4LjIxMyA0Ni4yNCAxMDcuNzMzIDQzLjA0QzEwNS43MzMgNDYuMjQgMTAyLjc5MyA0Ny44NCA5OC45MTMyIDQ3Ljg0QzkyLjM1MzIgNDcuODQgODkuMDczMiA0NS4wMiA4OS4wNzMyIDM5LjM4Qzg5LjA3MzIgMzguNDIgODkuMTczMiAzNy4zNiA4OS4zNzMyIDM2LjJMOTAuNjMzMiAyOS4xOEM5MS4yNzMyIDI1LjU4IDkyLjczMzIgMjIuNzIgOTUuMDEzMiAyMC42Qzk3LjMzMzIgMTguNDQgMTAwLjMzMyAxNy4zNiAxMDQuMDEzIDE3LjM2QzEwNy43MzMgMTcuMzYgMTEwLjI1MyAxOC4yMiAxMTEuNTczIDE5Ljk0TDExMS44NzMgMTguMTRIMTIwLjk5M0wxMTcuNjMzIDM3LjA0QzExNy41OTMgMzcuMjggMTE3LjU3MyAzNy41MiAxMTcuNTczIDM3Ljc2Wk05OS44MTMyIDM0Ljg4Qzk5LjczMzIgMzUuMjQgOTkuNjkzMiAzNS43NCA5OS42OTMyIDM2LjM4Qzk5LjY5MzIgMzcuMDIgOTkuOTkzMiAzNy42NiAxMDAuNTkzIDM4LjNDMTAxLjE5MyAzOC45IDEwMi4xOTMgMzkuMiAxMDMuNTkzIDM5LjJDMTA1LjAzMyAzOS4yIDEwNi4yNzMgMzguNjQgMTA3LjMxMyAzNy41MkwxMDkuMTEzIDI3LjQ0QzEwOC42NzMgMjYuNDQgMTA3LjYzMyAyNS45NCAxMDUuOTkzIDI1Ljk0QzEwMi45MTMgMjUuOTQgMTAxLjExMyAyNy40MiAxMDAuNTkzIDMwLjM4TDk5LjgxMzIgMzQuODhaIiBmaWxsPSIjRTk1RjMzIi8+CjxwYXRoIGQ9Ik04NC40NDU1IDQ2Ljk5OTlINTcuMDg1NEw2NC43MDU1IDMuNzk5OTNINzUuNTA1NEw2OS41NjU0IDM3LjYzOTlIODYuMTI1NUw4NC40NDU1IDQ2Ljk5OTlaIiBmaWxsPSIjRTk1RjMzIi8+Cjwvc3ZnPgo=" alt="Labid" class="footer-logo" />
+      <p class="footer-tagline">BtoG SalesのためのAI Revenue OS</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4 class="footer-col-title">プロダクト</h4>
+        <ul>
+          <li><a href="./Labid-LP-Dark.html">Labid</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">リソース</h4>
+        <ul>
+          <li><a href="#">導入事例</a></li>
+          <li><a href="#">お役立ち記事</a></li>
+          <li><a href="#">Labid Talk (Podcast)</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">会社情報</h4>
+        <ul>
+          <li><a href="./Nehan-Site-Dark.html">Nehan株式会社</a></li>
+          <li><a href="./recruit/index.html">採用情報</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">利用規約</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© Nehan Inc.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
