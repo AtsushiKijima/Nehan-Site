@@ -7,9 +7,11 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="icon" href="<?php echo esc_url( get_template_directory_uri() . '/assets/favicon.ico' ); ?>" sizes="any" />
-<link rel="shortcut icon" href="<?php echo esc_url( get_template_directory_uri() . '/assets/favicon.ico' ); ?>" />
 <?php
+// ファビコンはテーマで固定せず、WordPress のサイトアイコン（外観 > カスタマイズ > サイト基本情報）
+// が wp_head() から出力するものだけを使う。ここで rel="icon" を重ねると sizes="any" が
+// 優先されてサイトアイコンの変更が反映されず、Google 側の選択も不安定になる。
+
 // OGP / SNS シェア用メタ
 if ( is_singular() ) {
 	$nehan_og_url  = get_permalink();

@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="icon" href="./favicon.ico" sizes="any" />
-<link rel="shortcut icon" href="./favicon.ico" />
+<!-- ファビコンは本体サイトのサイトアイコンと同じ画像を使う。Google は 48px の倍数を要求するため、
+     32px 止まりの favicon.ico ではなく 192x192 を指定する（本体は wp_head() が同じ画像を出力）。 -->
+<link rel="icon" href="https://nehan6.com/wp-content/uploads/2026/08/cropped-logo_vertical-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://nehan6.com/wp-content/uploads/2026/08/cropped-logo_vertical-180x180.png" />
 <title>採用情報 | Nehan株式会社</title>
 <meta name="description" content="Nehan株式会社では、共にチャレンジする仲間を募集しています。新しい公共を、共に創ろう。" />
 <meta property="og:type" content="website" />
