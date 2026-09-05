@@ -114,3 +114,55 @@ add_action( 'save_post', function ( $post_id ) {
 		delete_post_meta( $post_id, 'nehan_external_url' );
 	}
 } );
+/**
+ * Google アナリティクス 4（GA4）の計測タグ
+ *
+ * 測定ID: G-609ZQVNC1K
+ * - <head> のできるだけ上に出す（優先度 1）
+ * - ログイン中のユーザー（＝社内メンバー）は計測しない
+ */
+define( 'NEHAN_GA4_ID', 'G-609ZQVNC1K' );
+
+function nehan_ga4_tag() {
+	if ( is_user_logged_in() ) {
+		return; // 社内（管理画面ログイン中）のアクセスは数えない
+	}
+	$id = NEHAN_GA4_ID;
+	?>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo rawurlencode( $id ); ?>"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '<?php echo esc_js( $id ); ?>');
+</script>
+	<?php
+}
+add_action( 'wp_head', 'nehan_ga4_tag', 1 );
+
+/**
+ * お問い合わせ送信（Contact Form 7）を GA4 のコンバージョンとして送る
+ *
+ * このサイトは送信後にサンクスページへ遷移しないため、
+ * CF7 が送信成功時に出すイベント（wpcf7mailsent）を拾って GA4 に送る。
+ * GA4 側では「generate_lead」をキーイベント（コンバージョン）に設定すること。
+ */
+function nehan_ga4_cf7_event() {
+	if ( is_user_logged_in() ) {
+		return;
+	}
+	?>
+<script>
+  document.addEventListener('wpcf7mailsent', function (event) {
+    if (typeof gtag !== 'function') return;
+    gtag('event', 'generate_lead', {
+      form_id: event.detail.contactFormId,
+      form_name: event.detail.unitTag || '',
+      page_path: location.pathname
+    });
+  });
+</script>
+	<?php
+}
+add_action( 'wp_footer', 'nehan_ga4_cf7_event' );
